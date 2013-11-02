@@ -5,6 +5,7 @@ gem 'rails', '4.0.0'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
+gem 'monban', '0.0.6'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -32,14 +33,17 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :development do
+  gem 'rails-footnotes', :group => :development
+  gem "better_errors"
+  gem "binding_of_caller"
+  gem 'annotate'
+  gem 'flay'
+  gem 'hirb'
+  gem 'meta_request','0.2.1'
+end
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
