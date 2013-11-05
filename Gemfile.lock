@@ -36,6 +36,7 @@ GEM
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.1.4)
+    cocaine (0.4.2)
     coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -73,6 +74,12 @@ GEM
       rails
       warden
     multi_json (1.8.2)
+    paperclip (3.4.0)
+      activemodel (>= 3.0.0)
+      activerecord (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      cocaine (~> 0.4.0)
+      mime-types
     polyglot (0.3.3)
     rack (1.5.2)
     rack-contrib (1.1.0)
@@ -148,6 +155,7 @@ DEPENDENCIES
   jquery-rails
   meta_request (= 0.2.1)
   monban (= 0.0.6)
+  paperclip (= 3.4.0)
   rails (= 4.0.0)
   rails-footnotes
   sass-rails (~> 4.0.0)
