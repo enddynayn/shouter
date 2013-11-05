@@ -1,7 +1,7 @@
 class PhotoShoutsController < ApplicationController 
 	def create
-		content = build_content
-		shout = current_user.shouts.build(content: content)
+
+		shout = current_user.shouts.build(content: build_content)
 		if shout.save
 				redirect_to dashboard_path
 		else
