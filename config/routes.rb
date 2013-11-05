@@ -8,7 +8,7 @@ Shouter::Application.routes.draw do
   resource :dashboard, only: [:show] 
   resource :session, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create, :show]
-  resources :text_shout, only: [:create]
+  resources :text_shouts, only: [:create]
   
   
 end
