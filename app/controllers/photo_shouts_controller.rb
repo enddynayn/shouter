@@ -1,4 +1,4 @@
-class TextShoutsController < ApplicationController
+class PhotoShoutsController < ApplicationController
 	def create
 		content = build_content
 		shout = current_user.shouts.build(content: content)
@@ -10,15 +10,14 @@ class TextShoutsController < ApplicationController
 		end
 	end
 
-	private
+private
 
-		def build_content
-			TextShout.new(text_shout_parameters)
-		end
+	def build_content
+		PhotoShout.new(photo_shout_parameters)
+	end
 
-		def text_shout_parameters
-			params.require(:text_shout).permit(:body)
-		end
+	def photo_shout_parameters
+		params.require(:photo_shout).permit(:image)
+	end
 
-	
 end
