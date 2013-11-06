@@ -1,4 +1,5 @@
 require 'digest/md5'
+# the module gets mixin inside the view class by default
 module ShoutsHelper
 	def gravatar user, size=48
 		digest = Digest::MD5.hexdigest(user.email)
