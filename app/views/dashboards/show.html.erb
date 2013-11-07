@@ -1,5 +1,7 @@
 Dashboards
 
+<%= button_for 'Follow', follow_user_path %>
+
 <%= form_for @text_shout do |form| %>
 	<%= form.text_field :body, placeholder: 'Shout content here' %>
 	<%= form.submit 'Shout' %>
