@@ -12,7 +12,7 @@
 
 class Shout < ActiveRecord::Base
   belongs_to :user
-
+  validates_associated :content
   default_scope { order("created_at DESC")}
 
   belongs_to :content, polymorphic: true
