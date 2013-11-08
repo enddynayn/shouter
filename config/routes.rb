@@ -7,7 +7,7 @@ Shouter::Application.routes.draw do
   # it does not have an :id
   resource  :dashboard, only: [:show] 
   resource :session, only: [:new, :create, :destroy]
-  resources :users, only: [:new, :create, :show] do 
+  resources :users, only: [:index, :new, :create, :show] do 
     post 'follow' => 'following_relationships#create'
   end
   resources :shouts, only: [:show]
