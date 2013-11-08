@@ -28,4 +28,9 @@ class User < ActiveRecord::Base
 	# follower_id
 	# followed_user_id
 	# timestamps
+
+	def following? user 
+		followed_user_ids.include? user.id 
+
+	end
 end
