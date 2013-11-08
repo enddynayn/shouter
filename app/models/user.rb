@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
 	# In order fix the problem we need to create a table in between 
 	# because the association is between Users which are in the same table.
 	# 
-	has_many :followed_users, through: :following_relationships 
+	#has_many :followed_users, through: :following_relationships 
 	# this will imply that the user..
 	# by default the sql statment will look like this:
 	# SELECT * from following_relationships WHERE user_id = ?
@@ -26,5 +26,25 @@ class User < ActiveRecord::Base
 	# so i need to arrange a sql statement:
 	# SELECT * from following_reationship WHERE follower_id = 2
 	# hence, we need to overwrite the foreing key to follower_id
-	has_many :following_relationships, foreign_key: :follower_id #second arg is how to overwrite
+	#has_many :following_relationships, foreign_key: :follower_id #second arg is how to overwrite
+
+	# to search for followers it seems logical to use the pattern
+	# from above. However, this assumptions is not completely correct because,
+	# it makes you, your own follower.
+	#has_many :followers, through: :following_relationships
+	# creates this sql statement:
+	# SELECT * FROM following_relationships WHERE follower_id = ? # follower_ids
+	# SELECT * FROM users WHERE ID IN (?) # follower_ids
+
+	has_many :follower_relationships,
+		foreign_key: :followed_user_id,
+		class_name: 'FollowingRelationship'
+	has_many :followers, through: :follower_relationships
+	
+
+	has_many :followed_user_relationships,
+		foreign_key: :follower_id,
+		class_name: 'FollowingRelationship' 
+	has_many :followed_users, through: :followed_user_relationships
+
 end
