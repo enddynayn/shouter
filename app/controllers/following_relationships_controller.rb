@@ -13,4 +13,7 @@ class FollowingRelationshipsController < ApplicationController
 		current_user.unfollow user
 		redirect_to user
 	end
+
+	def user 
+		User.find(params[:user_id])
 end
