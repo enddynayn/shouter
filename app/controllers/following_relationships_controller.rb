@@ -3,13 +3,13 @@ class FollowingRelationshipsController < ApplicationController
 		# params are going to look like 
 		# /users/:user_id/follow(.:format)
 		current_user.follow user
-		redirect_to user 
+		redirect_to user, notice: "Now following user."
 	end
 
 	def destroy
 		user = User.find(params[:user_id])
 		current_user.unfollow user
-		redirect_to user
+		redirect_to user, notice: "No longer following user."
 	end
 	private
 	# ruby will find a distinction between local
