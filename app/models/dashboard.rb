@@ -11,7 +11,9 @@ class Dashboard
 		PhotoShout.new
 	end
 
-	def shouts
-		@user.shouts
+	
+    # replace for shouts
+	def timeline 
+		Timeline.new(@user)
 	end
 end
