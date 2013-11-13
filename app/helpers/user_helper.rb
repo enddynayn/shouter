@@ -3,6 +3,7 @@ module UserHelper
 	# in the users/show.html. Then I added the route
 	# by puttin it here it cleans up our views.
 	def follow_button user 
+		# following user is defined in user model
 		if current_user.following? user 
 			button_to 'Unfollow', user_follow_path(user), method: :delete 
 		else

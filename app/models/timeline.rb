@@ -1,11 +1,12 @@
 class Timeline
-	extend ActiveModel::Naming
+	extend ActiveModel::Naming	
+	
 	def initialize user
 		@user = user
 	end
 
 	def shouts
-		@user.shouts.where(user_id: shout_user_ids) 
+		@user.shouts #.where(user_id: shout_user_ids) 
 	end
 
 	private 
@@ -15,3 +16,7 @@ class Timeline
 	end
 
 end
+
+# the law of demeter
+# you can talk to your friends
+# but we cannot talk to our friends friends. 
