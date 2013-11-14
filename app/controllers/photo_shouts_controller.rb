@@ -22,3 +22,4 @@ class PhotoShoutsController < ApplicationController
 		end
 
 end
+

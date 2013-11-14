@@ -1,3 +1,4 @@
+# look for bug but could not find it
  class DashboardsController < ApplicationController
 	def show
 		# @text_shout = TextShout.new
